@@ -42,12 +42,16 @@ def predict_class (sentence):
     return return_list
 
 def get_response(intents_list, intents_json):
+    if not intents_list:
+        return "I'm sorry, I didn't quite catch that. Could you please rephrase your question?"
     tag = intents_list[0]['intent']
+    #probability = float(intents_list[0]['probability'])  # Extract probability from the first element of intents_list
+    #print(probability)
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
-        if i['tag'] == tag:
-            result = random.choice (i['responses'])
-            break
+            if i['tag'] == tag:
+                result = random.choice(i['responses'])
+                break
     return result
 
 print("GO! Bot is running!")
