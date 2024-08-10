@@ -1,0 +1,54 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good afternoon"],
+      "responses": ["Hello! How can I assist you?", "Hi there! How can I help you today?"],
+      "context": [""]
+    },
+    {
+      "tag": "general_info",
+      "patterns": ["What programs do you offer?", "Can you tell me about your majors?", "What degrees do you have?"],
+      "responses": ["We offer a variety of undergraduate and graduate programs. Would you like more information about a specific program?"],
+      "context": [""]
+    },
+    {
+      "tag": "admissions",
+      "patterns": ["How do I apply?", "What are the admission requirements?", "When is the application deadline?"],
+      "responses": ["To apply, you can visit our admissions website or contact the admissions office. Admission requirements vary by program. The application deadline is typically in the spring for fall enrollment."],
+      "context": [""]
+    },
+    {
+      "tag": "financial_aid",
+      "patterns": ["Do you offer financial aid?", "What scholarships are available?", "How can I apply for grants?"],
+      "responses": ["Yes, we offer various forms of financial aid including scholarships, grants, and loans. Information on available scholarships and grants can be found on our website. You can apply for financial aid by completing the FAFSA (Free Application for Federal Student Aid)."],
+      "context": [""]
+    },
+    {
+      "tag": "campus_life",
+      "patterns": ["What is campus life like?", "Are there student clubs and organizations?", "Tell me about housing options."],
+      "responses": ["Campus life is vibrant and diverse, with numerous clubs, organizations, and events. We offer a range of housing options including on-campus dormitories and off-campus apartments."],
+      "context": [""]
+    },
+    {
+      "tag": "contact_info",
+      "patterns": ["How can I contact the university?", "What is the phone number and address?"],
+      "responses": ["You can contact us by phone at [phone number] or visit us at [address]. For more contact information, please visit our website."],
+      "context": [""]
+    },
+    {
+      "tag": "canteen",
+      "patterns": ["where is canteen located", "can i have lunch in canteen", "how can i approach canteen", "is there canteen in college"],
+      "responses": ["There is canteen in the college located near block 7 ,u can have lunch, snacks and juices in canteen."],
+      "context": [""]
+    },
+    {
+      "tag": "bye",
+      "patterns": ["bye","thank you","thanku","thankyou","Good bye", "See you later", "Bye for now", "Take care"],
+      "responses": ["Goodbye! Feel free to reach out if you have any further questions."],
+      "context": [""]
+    }
+  ],
+  "no_answer": {
+    "response": "I'm sorry, I don't have an answer for that question."
+}
