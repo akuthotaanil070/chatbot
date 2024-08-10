@@ -1,3 +1,5 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 from flask import Flask, render_template, request, jsonify
 import random
 import json
@@ -12,7 +14,7 @@ app.static_folder = 'static'  # Specify the folder for serving static files
 
 # Load intents and model
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open('C:\chatbot_using_sequential_modeling\chatbot_using_sequential_modeling\intents.json').read())
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
 model = load_model('chatbot_model.h5')
@@ -47,9 +49,7 @@ def get_response(intents_list, intents_json):
         if i['tag'] == tag:
             result = random.choice(i['responses'])
             break
-    else:
-        # Fallback response when the intent is not found
-        result = "I'm sorry, I don't understand that. Can you please rephrase or ask another question?"
+        
     return result
 
 @app.route('/')
@@ -61,11 +61,7 @@ def get_bot_response():
     data = request.json
     message = data['message']
     ints = predict_class(message)
-    if ints:
-        res = get_response(ints, intents)
-    else:
-        # Fallback response when no intent is predicted
-        res = "I'm sorry, I'm not sure how to respond to that."
+    res = get_response(ints, intents)
     return jsonify({'response': res})
 
 print("Run in the localhost")
